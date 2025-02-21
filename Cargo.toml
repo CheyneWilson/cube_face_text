@@ -1,0 +1,21 @@
+[package]
+name = "cube_text_example"
+version = "0.1.0"
+edition = "2021"
+
+
+
+[profile.release]
+# See optimzing for size - https://bevy-cheatbook.github.io/platforms/wasm/size-opt.html
+# Usually, z produces smaller files than s, but sometimes it can be the opposite.
+opt-level = 'z'
+lto = true
+codegen-units = 1
+
+
+[dependencies]
+bevy = "0.15.0"
+
+[[example]]
+name = "cube_face_texture"
+path = "examples/cube_face_texture.rs"
